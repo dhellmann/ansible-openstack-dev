@@ -1,2 +1,3 @@
 ---
-# tasks file for openstack-dev
+- include: test_dependencies.yml
+- include: source_repositories.yml

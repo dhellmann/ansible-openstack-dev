@@ -1,0 +1,17 @@
+---
+- name: Create user repos dir
+  file: path={{openstack_dev_repos_dir}} state=directory
+        mode=0755
+        owner={{ansible_env.USER}}
+  sudo: yes
+- name: Create openstack repos dir
+  file: path={{openstack_dev_repos_dir}}/openstack state=directory
+- name: Check out oslo-incubator for tools
+  git: repo=git://git.openstack.org/openstack/oslo-incubator
+       dest={{openstack_dev_repos_dir}}/openstack/oslo-incubator
+       accept_hostkey=yes
+- name: Install update.sh
+  copy: src=update.sh
+        dest={{openstack_dev_repos_dir}}/update.sh
+        mode=0755
+        force=yes

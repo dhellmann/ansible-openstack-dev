@@ -1,2 +1,2 @@
 ---
-# defaults file for openstack-dev
+openstack_dev_repos_dir: "{{ ansible_env.HOME }}/repos"
