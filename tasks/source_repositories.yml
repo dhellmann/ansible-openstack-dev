@@ -9,6 +9,7 @@
 - name: Check out oslo-incubator for tools
   git: repo=git://git.openstack.org/openstack/oslo-incubator
        dest={{openstack_dev_repos_dir}}/openstack/oslo-incubator
+       update=no
        accept_hostkey=yes
 - name: Install update.sh
   copy: src=update.sh
