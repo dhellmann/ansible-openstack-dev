@@ -16,3 +16,8 @@
         dest={{openstack_dev_repos_dir}}/update.sh
         mode=0755
         force=yes
+- name: Check out requirements for wheel building tools
+  git: repo=git://git.openstack.org/openstack/requirements
+       dest={{openstack_dev_repos_dir}}/openstack/requirements
+       update=no
+       accept_hostkey=yes
