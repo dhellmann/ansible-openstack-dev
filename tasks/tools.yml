@@ -1,0 +1,9 @@
+---
+- name: Install pastebinit
+  apt: name=pastebinit state=latest
+  sudo: yes
+- name: Install ~/.pastebinit.xml
+  copy: src=pastebinit.xml
+        dest={{ansible_env.HOME}}/.pastebinit.xml
+        mode=0644
+        owner={{ansible_env.USER}}

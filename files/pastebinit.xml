@@ -1,0 +1,6 @@
+<!-- https://help.ubuntu.com/community/Pastebinit -->
+<!-- man pastebinit -->
+<pastebinit>
+	<pastebin>http://paste.openstack.org</pastebin>
+	<format>text</format>
+</pastebinit>

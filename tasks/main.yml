@@ -1,3 +1,4 @@
 ---
 - include: test_dependencies.yml
 - include: source_repositories.yml
+- include: tools.yml
