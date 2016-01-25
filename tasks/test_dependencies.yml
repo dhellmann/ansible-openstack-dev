@@ -32,3 +32,5 @@
     - uuid-dev # qpid/proton for oslo.messaging https://review.openstack.org/#/c/191107/3
     - swig # qpid/proton for oslo.messaging https://review.openstack.org/#/c/191107/3
     - realpath # release-tools
+    - libjpeg8
+    - libjpeg8-dev # Pillow, used by some of the documentation builds
