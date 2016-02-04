@@ -7,3 +7,6 @@
         dest={{ansible_env.HOME}}/.pastebinit.xml
         mode=0644
         owner={{ansible_env.USER}}
+- name: Install git restack
+  pip: name=git-restack
+  sudo: true
