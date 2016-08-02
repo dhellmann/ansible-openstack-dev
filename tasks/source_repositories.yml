@@ -21,3 +21,9 @@
        dest={{openstack_dev_repos_dir}}/openstack/requirements
        update=no
        accept_hostkey=yes
+- name: Set up cron
+  cron: name="refresh cache"
+        hour=1
+        user={{ansible_env.USER}}
+        job={{openstack_dev_repos_dir}}/update.sh
+  sudo: true
