@@ -116,8 +116,6 @@ function update_existing {
     typeset repo="$1"
     echo
     echo "Updating $repo"
-    (cd $repo && git config --local remote.origin.url $(git config --get remote.origin.url | sed -e '/git:/s//https:/'))
-    (cd $repo && git config --get remote.origin.url | sed -e '/git:/s//https:/')
     (cd $repo && git remote update origin && git fetch --tags origin)
     RC=$?
     if [ $RC -ne 0 ]
