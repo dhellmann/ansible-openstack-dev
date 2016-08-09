@@ -25,5 +25,5 @@
   cron: name="refresh cache"
         hour=1
         user={{ansible_env.USER}}
-        job={{openstack_dev_repos_dir}}/update.sh
+        job="cd {{openstack_dev_repos_dir}}; ./update.sh"
   sudo: true
