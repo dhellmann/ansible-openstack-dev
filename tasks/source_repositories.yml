@@ -6,7 +6,7 @@
   sudo: yes
 - name: Create openstack repos dir
   file: path={{openstack_dev_repos_dir}}/openstack state=directory
-- name: Check out oslo-incubator for tools
+- name: Check out oslo.tools
   git: repo=git://git.openstack.org/openstack/oslo.tools
        dest={{openstack_dev_repos_dir}}/openstack/oslo.tools
        update=no
