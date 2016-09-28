@@ -155,6 +155,9 @@ function get_one_repo {
         update_existing $repo
     fi
     RC=$?
+    if [[ -f $repo/setup.py ]]; then
+        (cd $repo && python setup.py egg_info)
+    fi
     return $RC
 }
 
