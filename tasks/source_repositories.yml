@@ -3,7 +3,7 @@
   file: path={{openstack_dev_repos_dir}} state=directory
         mode=0755
         owner={{ansible_env.USER}}
-  sudo: yes
+  become: true
 - name: Create openstack repos dir
   file: path={{openstack_dev_repos_dir}}/openstack state=directory
 - name: Check out oslo.tools
@@ -26,4 +26,4 @@
         hour=1
         user={{ansible_env.USER}}
         job="cd {{openstack_dev_repos_dir}}; ./update.sh"
-  sudo: true
+  become: true

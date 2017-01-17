@@ -1,7 +1,7 @@
 ---
 - name: Install packages required for unittests and developer doc builds
   apt: name={{ item }} state=latest
-  sudo: yes
+  become: true
   with_items:
     - libmysqlclient-dev
     - npm

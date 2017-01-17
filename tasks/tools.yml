@@ -1,7 +1,7 @@
 ---
 - name: Install pastebinit
   apt: name=pastebinit state=latest
-  sudo: yes
+  become: true
 - name: Install ~/.pastebinit.xml
   copy: src=pastebinit.xml
         dest={{ansible_env.HOME}}/.pastebinit.xml
@@ -9,4 +9,4 @@
         owner={{ansible_env.USER}}
 - name: Install git restack
   pip: name=git-restack
-  sudo: true
+  become: true
