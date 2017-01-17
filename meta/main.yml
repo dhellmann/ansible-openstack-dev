@@ -3,7 +3,7 @@ galaxy_info:
   author: Doug Hellmann
   description: Set up a server with tools useful for developing OpenStack.
   license: BSD
-  min_ansible_version: 1.8.2
+  min_ansible_version: 2.2.1
   platforms:
     - name: Ubuntu
       versions:
