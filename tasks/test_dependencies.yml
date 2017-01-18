@@ -36,3 +36,5 @@
     - libjpeg8-dev # Pillow, used by some of the documentation builds
     - libnss3
     - libnss3-dev # related to nspr, maybe ceilometer needs it?
+    - mysql-client # rebuilding constraints
+    - postgresql-client # rebuilding constraints
