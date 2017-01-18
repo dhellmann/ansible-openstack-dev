@@ -34,3 +34,5 @@
     - realpath # release-tools
     - libjpeg8
     - libjpeg8-dev # Pillow, used by some of the documentation builds
+    - libnss3
+    - libnss3-dev # related to nspr, maybe ceilometer needs it?
