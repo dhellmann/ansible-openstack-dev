@@ -128,7 +128,7 @@ function update_existing {
     then
         if (cd $repo && git diff --exit-code >/dev/null)
         then
-            (cd $repo && git pull)
+            (cd $repo && git gc && git pull)
         else
             echo "Skipping pull for master branch with local changes"
             (cd $repo && git status)
