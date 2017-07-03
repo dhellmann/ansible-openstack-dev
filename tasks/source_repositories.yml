@@ -23,7 +23,7 @@
        accept_hostkey=yes
 - name: Set up cron
   cron: name="refresh cache"
-        hour=1
+        special_time=daily
         user={{ansible_env.USER}}
-        job="cd {{openstack_dev_repos_dir}}; ./update.sh"
+        job="cd {{openstack_dev_repos_dir}}; ./update.sh >update.log 2>&1"
   become: true
