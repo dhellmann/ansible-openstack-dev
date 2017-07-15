@@ -116,7 +116,7 @@ function update_existing {
     typeset repo="$1"
     echo
     echo "Updating $repo"
-    (cd $repo && git remote update origin && git fetch --tags origin && git clean -f -d)
+    (cd $repo && git remote update --prune && git fetch --tags origin && git clean -f -d)
     RC=$?
     if [ $RC -ne 0 ]
     then
