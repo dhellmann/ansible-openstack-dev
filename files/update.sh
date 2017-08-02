@@ -188,17 +188,35 @@ then
         echo "Unable to obtain a list of projects from gerrit."
         exit $RC
     fi
+    do_cleanup=true
 else
     # Go ahead and set things up so we will work with stackforge
     # repositories, in case the caller has specified one on the
     # command line.
     INCLUDE_STACKFORGE=1
+    do_cleanup=false
 fi
 
 for repo in $projects; do
     get_one_repo $repo https://git.openstack.org/$repo
     track_trouble $? $repo
 done
+
+# Try to remove obsolete repositories
+if $do_cleanup; then
+    echo
+    echo "Cleaning up"
+    echo
+    for repo in openstack*/*; do
+        if [[ ! -d $repo ]]; then
+            continue
+        fi
+        if [[ ! $projects =~ $repo ]]; then
+            echo "remove $repo"
+            rm -rf $repo || track_trouble "removing obsolete repository $repo"
+        fi
+    done
+fi
 
 report_branched
 report_trouble
