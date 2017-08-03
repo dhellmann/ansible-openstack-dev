@@ -100,7 +100,6 @@ function clone_new {
     echo
     echo "Cloning $repo"
     git clone $url $repo
-    (cd $repo && git review -s)
     if [ $USE_GIT_HOOKS -eq 0 ]
     then
         echo "Configuring git hooks"
