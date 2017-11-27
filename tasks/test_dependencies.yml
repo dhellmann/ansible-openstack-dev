@@ -38,3 +38,4 @@
     - libnss3-dev # related to nspr, maybe ceilometer needs it?
     - mysql-client # rebuilding constraints
     - postgresql-client # rebuilding constraints
+    - libpcre3-dev  # needed by whereto for doc builds
