@@ -10,3 +10,10 @@
 - name: Install git restack
   pip: name=git-restack
   become: true
+- name: Install LaTeX
+  apt:
+    name: "{{item}}"
+  with:
+    - texlive-xetex
+    - latexmk
+  become: true
