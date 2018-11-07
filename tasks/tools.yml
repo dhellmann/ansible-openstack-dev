@@ -12,8 +12,7 @@
   become: true
 - name: Install LaTeX
   apt:
-    name: "{{item}}"
-  with:
-    - texlive-xetex
-    - latexmk
+    name:
+      - texlive-xetex
+      - latexmk
   become: true
