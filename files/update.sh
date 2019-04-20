@@ -12,13 +12,13 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 #
-# Check out every active repository from git.openstack.org. For new
+# Check out every active repository from git.opendev.org. For new
 # copies, set up git-review. For any existing copies, update their
 # remotes and pull changes up to the local master.
 #
 # This script is based on prior art from mordred on the openstack-dev
 # mailing list.
-# http://lists.openstack.org/pipermail/openstack-dev/2013-October/017532.html
+# http://lists.opendev.org/pipermail/openstack-dev/2013-October/017532.html
 #
 # Usage:
 #
@@ -163,8 +163,8 @@ function get_one_repo {
 # Produce a list of the git repositories on the server that we want to
 # clone.
 function list_repos_to_clone {
-    # ssh review.openstack.org -p 29418 gerrit ls-projects | grep '^openstack' | grep -v 'attic'
-    curl -s https://review.openstack.org/projects/ \
+    # ssh review.opendev.org -p 29418 gerrit ls-projects | grep '^openstack' | grep -v 'attic'
+    curl -s https://review.opendev.org/projects/ \
         | grep ': {' \
         | cut -f2 -d'"' \
         | grep '^openstack' \
@@ -197,7 +197,7 @@ else
 fi
 
 for repo in $projects; do
-    get_one_repo $repo https://git.openstack.org/$repo
+    get_one_repo $repo https://git.opendev.org/$repo
     track_trouble $? $repo
 done
 

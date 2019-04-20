@@ -7,7 +7,7 @@
 - name: Create openstack repos dir
   file: path={{openstack_dev_repos_dir}}/openstack state=directory
 - name: Check out oslo.tools
-  git: repo=git://git.openstack.org/openstack/oslo.tools
+  git: repo=git://git.opendev.org/openstack/oslo.tools
        dest={{openstack_dev_repos_dir}}/openstack/oslo.tools
        update=no
        accept_hostkey=yes
@@ -17,7 +17,7 @@
         mode=0755
         force=yes
 - name: Check out requirements for wheel building tools
-  git: repo=git://git.openstack.org/openstack/requirements
+  git: repo=git://git.opendev.org/openstack/requirements
        dest={{openstack_dev_repos_dir}}/openstack/requirements
        update=no
        accept_hostkey=yes

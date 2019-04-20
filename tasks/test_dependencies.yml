@@ -28,9 +28,9 @@
       - libsasl2-dev # python-ldap
       - libssl-dev # python-ldap
       - graphviz
-      - uuid # qpid/proton for oslo.messaging https://review.openstack.org/#/c/191107/3
-      - uuid-dev # qpid/proton for oslo.messaging https://review.openstack.org/#/c/191107/3
-      - swig # qpid/proton for oslo.messaging https://review.openstack.org/#/c/191107/3
+      - uuid # qpid/proton for oslo.messaging https://review.opendev.org/#/c/191107/3
+      - uuid-dev # qpid/proton for oslo.messaging https://review.opendev.org/#/c/191107/3
+      - swig # qpid/proton for oslo.messaging https://review.opendev.org/#/c/191107/3
       - libjpeg8
       - libjpeg8-dev # Pillow, used by some of the documentation builds
       - libnss3
