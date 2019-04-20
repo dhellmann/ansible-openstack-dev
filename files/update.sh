@@ -113,8 +113,11 @@ function clone_new {
 # already.
 function update_existing {
     typeset repo="$1"
+    typeset url="$2"
     echo
     echo "Updating $repo"
+    # Fix the URL, in case it refers to an old location (added for opendev.org migration).
+    (cd $repo && git remote set-url origin $url)
     (cd $repo && git remote update --prune && git fetch --tags origin && git clean -f -d)
     RC=$?
     if [ $RC -ne 0 ]
@@ -151,7 +154,7 @@ function get_one_repo {
     if [ ! -d $repo ] ; then
         clone_new $repo $url
     else
-        update_existing $repo
+        update_existing $repo $url
     fi
     RC=$?
     if [[ -f $repo/setup.py ]]; then
@@ -197,7 +200,7 @@ else
 fi
 
 for repo in $projects; do
-    get_one_repo $repo https://git.opendev.org/$repo
+    get_one_repo $repo https://opendev.org/${repo}/
     track_trouble $? $repo
 done
 
