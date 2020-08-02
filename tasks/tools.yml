@@ -1,18 +1,25 @@
 ---
 - name: Install pastebinit
-  apt: name=pastebinit state=latest
   become: true
+  apt:
+    name: pastebinit
+    state: latest
+
 - name: Install ~/.pastebinit.xml
-  copy: src=pastebinit.xml
-        dest={{ansible_env.HOME}}/.pastebinit.xml
-        mode=0644
-        owner={{ansible_env.USER}}
+  copy:
+    src: pastebinit.xml
+    dest: "{{ ansible_env.HOME }}/.pastebinit.xml"
+    mode: "0644"
+    owner: "{{ ansible_env.USER }}"
+
 - name: Install git restack
-  pip: name=git-restack
   become: true
+  pip:
+    name: git-restack
+
 - name: Install LaTeX
+  become: true
   apt:
     name:
       - texlive-xetex
       - latexmk
-  become: true
